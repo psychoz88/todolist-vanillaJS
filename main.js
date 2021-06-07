@@ -55,11 +55,13 @@ function onPageLoaded() {
     }
   });
 
-  function onClickTodo(event) {
-    if (event.target.tagName === "LI") {
-      event.target.classList.toggle("checked");
-    }
-  }
+    function onClickTodo(event) {
+        if (event.target.className === "todo-text") {
+            event.target.classList.add("checked");
+        } else if (event.target.className === "todo-text checked") {
+            event.target.classList.remove("checked");
+        }
+      };
 
   ul.addEventListener("click", onClickTodo);
 
